@@ -18,6 +18,10 @@
     padding: 10px 10px 60px 10px;
 }
 
+.home-content-container a {
+    text-decoration: none;
+}
+
 .home-content-container h1 {
     width: 260px;
     font-size: 1em;

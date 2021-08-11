@@ -5,9 +5,11 @@
 
 .nav-logo-text {
     color: #fff;
-    h4 {
-        font-weight: bold;
-    }
+    text-decoration: none;
+}
+
+.nav-logo-text h4 {
+    font-weight: bold;
 }
 
 .nav-logo-text:hover {

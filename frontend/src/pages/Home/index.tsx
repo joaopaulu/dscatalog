@@ -15,7 +15,7 @@ const Home = () => {
           </p>
           <div>
             <Link to="/products">
-              <ButtonIcon text="Inicie aqui sua pesquisa" />
+              <ButtonIcon text="Inicie agora a sua busca" />
             </Link>
           </div>
         </div>

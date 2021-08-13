@@ -10,12 +10,12 @@ h4,
 h5,
 h6 {
     margin-bottom: 0;
-    font-weight: 700;
+    font-weight: 700!important;
 }
 
 a,
 a:hover {
-    text-decoration: none;
+    text-decoration: none!important;
     color: unset;
 }
 

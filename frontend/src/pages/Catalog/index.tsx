@@ -1,9 +1,9 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import { AxiosRequestConfig } from 'axios';
 import Pagination from 'components/Pagination';
 import ProductCard from 'components/ProductCard';
 import { Product } from 'core/types/product';
 import { SpringPage } from 'core/types/vendor/spring';
-import { BASE_URL } from 'core/utils/requests';
+import { requestBackend } from 'core/utils/requests';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CardLoader from './CardLoader';
@@ -17,7 +17,6 @@ const Catalog = () => {
     const params: AxiosRequestConfig = {
       method: 'GET',
       url: `/products`,
-      baseURL: BASE_URL,
       params: {
         page: 0,
         size: 8,
@@ -25,7 +24,7 @@ const Catalog = () => {
     };
 
     setIsloading(true);
-    axios(params)
+    requestBackend(params)
       .then(response => {
         setPage(response.data);
       })

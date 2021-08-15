@@ -4,8 +4,8 @@ import { useForm } from 'react-hook-form';
 import { requestBackendLogin } from 'core/utils/requests';
 import { useContext, useState } from 'react';
 import { AuthContext } from 'AuthContext';
-import { saveAuthData } from 'util/storage';
-import { getTokenData } from 'util/auth';
+import { saveAuthData } from 'core/utils/storage';
+import { getTokenData } from 'core/utils/auth';
 
 import './styles.css';
 

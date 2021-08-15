@@ -1,5 +1,6 @@
 import Navbar from 'components/NavBar';
 import Admin from 'pages/Admin';
+import Auth from 'pages/Admin/Auth';
 import Catalog from 'pages/Catalog';
 import Home from 'pages/Home';
 import ProductDetails from 'pages/ProductDetails';
@@ -19,6 +20,9 @@ const Routes = () => {
           </Route>
           <Route path="/products/:productId">
             <ProductDetails />
+          </Route>
+          <Route path="/admin/auth" exact>
+            <Auth />
           </Route>
           <Redirect from="/admin" to="/admin/products" exact />
           <Route path="/admin">

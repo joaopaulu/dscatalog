@@ -1,4 +1,4 @@
-import { hasAnyRoles, isAuthenticated, Role } from 'core/utils/requests';
+import { hasAnyRoles, isAuthenticated, Role } from 'core/utils/auth';
 import { Redirect, Route } from 'react-router-dom';
 
 type Props = {

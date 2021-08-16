@@ -1,6 +1,7 @@
 import { AuthContext } from 'AuthContext';
 import ButtonIcon from 'components/ButtonIcon';
-import { getTokenData, requestBackendLogin } from 'core/utils/requests';
+import { getTokenData } from 'core/utils/auth';
+import { requestBackendLogin } from 'core/utils/requests';
 import { saveAuthData } from 'core/utils/storage';
 import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';

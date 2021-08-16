@@ -1,7 +1,7 @@
 import { AuthContext } from 'AuthContext';
 import 'bootstrap/js/src/collapse.js';
 import history from 'core/utils/history';
-import { getTokenData, isAuthenticated } from 'core/utils/requests';
+import { getTokenData, isAuthenticated } from 'core/utils/auth';
 import { removeAuthData } from 'core/utils/storage';
 import React, { useContext, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';

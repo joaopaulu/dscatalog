@@ -1,4 +1,4 @@
-import { TokenData } from 'core/utils/requests';
+import { TokenData } from 'core/utils/auth';
 import { createContext } from 'react';
 
 export type AuthContextData = {

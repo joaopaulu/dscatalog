@@ -5,11 +5,6 @@
 
 .nav-logo-text {
     color: #fff;
-    text-decoration: none;
-}
-
-.nav-logo-text h4 {
-    font-weight: bold;
 }
 
 .nav-logo-text:hover {
@@ -26,7 +21,6 @@
 .main-menu a {
     font-style: normal;
     color: rgba(255, 255, 255, 0.5);
-    text-decoration: none;
 }
 
 .main-menu a.active {
@@ -36,4 +30,36 @@
 
 .main-menu a:hover {
     color: #fff;
+}
+
+.nav-login-logout {
+    display: none;
+}
+
+.nav-username {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .nav-login-logout {
+        display: unset;
+        margin-right: 15px;
+    }
+    .nav-login-logout a,
+    span {
+        color: #fff;
+    }
+    .nav-login-logout a:hover {
+        color: #fff;
+    }
+}
+
+@media (min-width: 992px) {
+    .nav-login-logout {
+        margin-right: 40px;
+    }
+    .nav-username {
+        display: unset;
+        margin-right: 20px;
+    }
 }

@@ -5,7 +5,7 @@ import qs from 'qs';
 import history from './history';
 import { getAuthData } from './storage';
 
-type Role = 'ROLE_OPERATOR' | 'ROLE_ADMIN';
+export type Role = 'ROLE_OPERATOR' | 'ROLE_ADMIN';
 
 export type TokenData = {
   exp: number;

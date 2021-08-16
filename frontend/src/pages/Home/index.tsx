@@ -1,6 +1,5 @@
 import ButtonIcon from 'components/ButtonIcon';
 import { ReactComponent as MainImage } from 'core/assets/images/main-image.svg';
-import { isAuthenticated } from 'core/utils/requests';
 import { Link } from 'react-router-dom';
 import './styles.css';
 

@@ -6,12 +6,12 @@ create table tb_product_category (
 alter table tb_product_category add constraint FK5r4sbavb4nkd9xpl0f095qs2a foreign key (category_id) references tb_category;
 alter table tb_product_category add constraint FKgbof0jclmaf8wn2alsoexxq3u foreign key (product_id) references tb_product;
 
-INSERT INTO tb_product_category (product_id, category_id) VALUES (1, 2);
-INSERT INTO tb_product_category (product_id, category_id) VALUES (2, 1);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (1, 1);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (2, 2);
 INSERT INTO tb_product_category (product_id, category_id) VALUES (2, 3);
 INSERT INTO tb_product_category (product_id, category_id) VALUES (3, 3);
 INSERT INTO tb_product_category (product_id, category_id) VALUES (4, 3);
-INSERT INTO tb_product_category (product_id, category_id) VALUES (5, 2);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (5, 1);
 INSERT INTO tb_product_category (product_id, category_id) VALUES (6, 3);
 INSERT INTO tb_product_category (product_id, category_id) VALUES (7, 3);
 INSERT INTO tb_product_category (product_id, category_id) VALUES (8, 3);

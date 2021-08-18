@@ -31,7 +31,7 @@
     height: 50px;
     width: 110px;
     border-radius: 10px;
-    font-weight: bold;
+    font-weight: bold!important;
 }
 
 @media (min-width: 576px) {

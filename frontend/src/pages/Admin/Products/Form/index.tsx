@@ -11,7 +11,11 @@ const Form = () => {
             <div className="col-lg-6 product-crud-inputs-left-container">
               <div className="margin-bottom-30">
                 <input type="text" className="form-control base-input" />
+              </div>
+              <div className="margin-bottom-30">
                 <input type="text" className="form-control base-input" />
+              </div>
+              <div>
                 <input type="text" className="form-control base-input" />
               </div>
             </div>
@@ -20,13 +24,17 @@ const Form = () => {
                 name=""
                 id=""
                 rows={10}
-                className="form-control base-input"
+                className="form-control base-input h-auto"
               ></textarea>
             </div>
           </div>
-          <div>
-            <button className="btn btn-outline-danger">CANCELAR</button>
-            <button className="btn btn-primary">SALVAR</button>
+          <div className="product-crud-buttons-container">
+            <button className="btn btn-outline-danger product-crud-button">
+              CANCELAR
+            </button>
+            <button className="btn btn-primary product-crud-button text-white">
+              SALVAR
+            </button>
           </div>
         </form>
       </div>

@@ -22,8 +22,8 @@ const Form = () => {
       withCredentials: true,
     };
 
-    requestBackend(config).then(response => {
-      console.log(response.data);
+    requestBackend(config).then(() => {
+      history.push('/admin/products');
     });
   };
 

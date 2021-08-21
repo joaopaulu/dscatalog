@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router';
 import { useParams } from 'react-router-dom';
+import Select from 'react-select';
 import './styles.css';
 
 type UrlParams = {
@@ -12,6 +13,7 @@ type UrlParams = {
 };
 
 const Form = () => {
+  const options = [{ value: 'teste', label: 'teste' }];
   const { productId } = useParams<UrlParams>();
   const isEditing = productId !== 'create';
 
@@ -79,6 +81,15 @@ const Form = () => {
                   {errors.name?.message}
                 </div>
               </div>
+
+              <div className="margin-bottom-30">
+                <Select
+                  options={options}
+                  isMulti
+                  classNamePrefix="product-crud-select"
+                />
+              </div>
+
               <div className="margin-bottom-30">
                 <input
                   {...register('price', {

@@ -11,7 +11,6 @@ import './styles.css';
 
 type ControlComponentsData = {
   activePage: number;
-  filterData: ProductFilterData;
 };
 
 const List = () => {
@@ -20,35 +19,35 @@ const List = () => {
   const [controlComponentsData, setControlComponentsData] =
     useState<ControlComponentsData>({
       activePage: 0,
-      filterData: { name: '', category: null },
     });
 
-  const handleSubmitFilter = (data: ProductFilterData) => {
-    setControlComponentsData({ activePage: 0, filterData: data });
+  const handlePageChange = (pageNumber: number) => {
+    setControlComponentsData({ activePage: pageNumber });
   };
 
-  const getProducts = useCallback(
-    (pageNumber: number) => {
-      const config: AxiosRequestConfig = {
-        method: 'GET',
-        url: '/products',
-        params: {
-          page: controlComponentsData.activePage,
-          size: 3,
-          name: controlComponentsData.filterData.name,
-          categoryId: controlComponentsData.filterData.category?.id,
-        },
-      };
+  const handleSubmitFilter = (data: ProductFilterData) => {
+    setControlComponentsData({ activePage: 0 });
+  };
 
-      requestBackend(config).then(response => {
-        setPage(response.data);
-      });
-    },
-    [controlComponentsData],
-  );
+  const getProducts = useCallback(() => {
+    const config: AxiosRequestConfig = {
+      method: 'GET',
+      url: '/products',
+      params: {
+        page: controlComponentsData.activePage,
+        size: 3,
+        //name: controlComponentsData.filterData.name,
+        //categoryId: controlComponentsData.filterData.category?.id,
+      },
+    };
+
+    requestBackend(config).then(response => {
+      setPage(response.data);
+    });
+  }, [controlComponentsData]);
 
   useEffect(() => {
-    getProducts(0);
+    getProducts();
   }, [getProducts]);
 
   return (
@@ -64,17 +63,14 @@ const List = () => {
       <div className="row">
         {page?.content.map(product => (
           <div key={product.id} className="col-sm-6 col-md-12">
-            <ProductCrudCard
-              product={product}
-              onDelete={() => getProducts(page.number)}
-            />
+            <ProductCrudCard product={product} onDelete={getProducts} />
           </div>
         ))}
       </div>
       <Pagination
         pageCount={page ? page.totalPages : 0}
         range={3}
-        onChange={getProducts}
+        onChange={handlePageChange}
       />
     </div>
   );

@@ -1,4 +1,5 @@
 import { AxiosRequestConfig } from 'axios';
+import Pagination from 'components/Pagination';
 import ProductFilter, { ProductFilterData } from 'components/ProductFilter';
 import { Product } from 'core/types/product';
 import { SpringPage } from 'core/types/vendor/spring';
@@ -64,6 +65,7 @@ const List = () => {
           </div>
         ))}
       </div>
+      <Pagination />
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { Category } from 'core/types/category';
 import { Product } from 'core/types/product';
 import { requestBackend } from 'core/utils/requests';
 import { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { useHistory } from 'react-router';
 import { useParams } from 'react-router-dom';
 import Select from 'react-select';
@@ -23,6 +23,7 @@ const Form = () => {
     handleSubmit,
     formState: { errors },
     setValue,
+    control,
   } = useForm<Product>();
 
   useEffect(() => {
@@ -89,13 +90,28 @@ const Form = () => {
               </div>
 
               <div className="margin-bottom-30">
-                <Select
-                  options={selectCategories}
-                  isMulti
-                  classNamePrefix="product-crud-select"
-                  getOptionLabel={(category: Category) => category.name}
-                  getOptionValue={(category: Category) => String(category.id)}
+                <Controller
+                  name="categories"
+                  rules={{ required: true }}
+                  control={control}
+                  render={({ field }) => (
+                    <Select
+                      {...field}
+                      options={selectCategories}
+                      isMulti
+                      classNamePrefix="product-crud-select"
+                      getOptionLabel={(category: Category) => category.name}
+                      getOptionValue={(category: Category) =>
+                        String(category.id)
+                      }
+                    />
+                  )}
                 />
+                {errors.categories && (
+                  <div className="invalid-feedback d-block">
+                    Campo obrigatório
+                  </div>
+                )}
               </div>
 
               <div className="margin-bottom-30">
